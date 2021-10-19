@@ -1,9 +1,18 @@
 import socket
 import time
+from flask import Flask, request, render_template
 
-def notice():
+app = Flask(__name__)
 
-def 
+@app.route('/',methods=['GET','POST'])
+
+def submit():
+    if request.method == 'POST':
+        cmds=request.values['cmds']
+        return cmds
+    return render_template("index.html")
+    
 
 if __name__=="__main__":
-    while True
+    app.run()
+    
