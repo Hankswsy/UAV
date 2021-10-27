@@ -8,8 +8,8 @@ app = Flask(__name__)
 
 def submit():
     if request.method == 'POST':
-        cmds=request.values['cmds']
-        return cmds
+        cmds=request.values.get('cmds')
+        return cmds+render_template("command.html")
     return render_template("index.html")
     
 

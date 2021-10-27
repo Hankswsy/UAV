@@ -14,12 +14,12 @@ def takeoff():
 
 def land():
     sock.sendto(b"land", tello_address)
-    response, ip = sock.recvfrom(1024)
+    response = sock.recvfrom(1024)
     print("land: ",response)
 
 def battery():
     sock.sendto(b"battery?", tello_address)
-    response, ip = sock.recvfrom(1024)
+    response = sock.recvfrom(1024)
     print("battery? ",response)
 
 
